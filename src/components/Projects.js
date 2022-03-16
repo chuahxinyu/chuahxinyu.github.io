@@ -41,7 +41,7 @@ export default function Projects() {
         projectName: "12 Days of Christmas",
         startDate: "",
         endDate: "Dec 2021",
-        tags: ["HTML", "CSS", "JavaScript", "Teamwork"],
+        tags: ["HTML", "CSS", "JavaScript", "Team"],
         links: [
           {
             name: "Devpost",
@@ -54,7 +54,7 @@ export default function Projects() {
         projectName: "ChromaWorld",
         startDate: "",
         endDate: "Dec 2021",
-        tags: ["HTML", "CSS", "JavaScript", "Teamwork"],
+        tags: ["HTML", "CSS", "JavaScript", "Team"],
         links: [
           {
             name: "Devpost",
@@ -67,7 +67,7 @@ export default function Projects() {
         projectName: "BYOCC",
         startDate: "",
         endDate: "Nov 2021",
-        tags: ["HTML", "CSS", "JavaScript", "Teamwork"],
+        tags: ["HTML", "CSS", "JavaScript", "Team"],
         links: [
           {
             name: "Devpost",
@@ -94,7 +94,7 @@ export default function Projects() {
         descriptions: ["Pitched a game concept through a point‑and‑click interactive website, informing the user about the game as well as highlighting the importance of first aid. Constructed a prototype of the game with custom 3D modelled objects and interactable elements."]
       },
       {
-        projectName: "Chckers Game and Player",
+        projectName: "Checkers Game and Player",
         startDate: "Sep 2021",
         endDate: "Oct 2021",
         tags: ["C", "Individual"],
@@ -110,7 +110,7 @@ export default function Projects() {
         projectName: "trashwith.us",
         startDate: "",
         endDate: "Sep 2021",
-        tags: ["HTML", "CSS", "JavaScript", "Teamwork"],
+        tags: ["HTML", "CSS", "JavaScript", "Team"],
         links: [
           {
             name: "Devpost",
@@ -123,7 +123,7 @@ export default function Projects() {
         projectName: "Python Space Invaders Game and AI Player",
         startDate: "",
         endDate: "Sep 2021",
-        tags: ["Python", "PyGame", "NEAT-Python", "Teamwork"],
+        tags: ["Python", "PyGame", "NEAT-Python", "Team"],
         links: [
           {
             name: "GitHub",
@@ -152,6 +152,7 @@ export default function Projects() {
 
   return (
     <div className='projects-container'>
+      <h1>PROJECTS</h1>
       {projects.list.map((project, index) => {
         return (
           <ProjectCard

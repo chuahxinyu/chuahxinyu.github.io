@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Alata&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+:root {
+  margin: 0;
+  padding: 0;
+
+  --text-primary: #000000;
+  --text-secondary1: #5f5f5f;
+  --text-secondary2: #a4a7ad;
+  --background-primary: ;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+h1 {
+  font-family: 'Alata', sans-serif;
+  text-align: center;
+}
+
+h2 {
+  font-family: 'Alata', sans-serif;
+}
+
+.App {
+  margin: 5% 10%;
+}
+
+.project {
+  padding: 1rem;
+}
+
+/* Project Tags */
+.project-tags-container {
+  margin-left: 2rem;
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  font-family: 'Roboto Mono', monospace;
+}
+
+.project-tag {
+  color: var(--text-secondary2);
+}
+
+.project-description {
+  margin-left: 3rem;
+}
+
+.project-links-container {
+  margin-left: 2rem;
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+}
+
+a {
+  color: var(--text-primary);
+  text-decoration: none;
+  border: 1px solid var(--text-primary);
+  margin-top: 10px;
+  padding: 0 10px;
+}
+
+a:hover {
+  color: var(--text-secondary1);
+  border: 1px solid var(--text-secondary1);
+}
