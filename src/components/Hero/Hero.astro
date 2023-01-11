@@ -1,0 +1,32 @@
+---
+import Bulb from "./Bulb";
+import Cup from "./Cup";
+import Laptop from "./Laptop";
+import Table from "./Table";
+import Ukulele from "./Ukulele";
+---
+<style>
+  .container{
+    
+  }
+  .center {
+    margin: 0 auto;
+  }
+</style>
+
+<div class="absolute flex h-screen right-4">
+  <div class="center">
+    <span class="absolute -top-20 right-10"><Bulb client:load/></span>
+    <div class="flex items-baseline top-64 justify-around">
+      <div class="flex items-baseline justify-around">
+        <Cup />
+        <Laptop />
+      </div>
+      <span class="pb-20">
+        <Ukulele />
+      </span>
+    </div>
+    <Table />
+    <div class="text-sm font-normal">hover over some items to learn more about me!</div>
+  </div>
+</div>

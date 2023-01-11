@@ -1,30 +1,38 @@
 ---
 const params = {
-	name: "Xin Yu",
-	occupation: "Developer • Designer",
-	email: "chuahxinyu2@gmail.com"
-}
+  name: "Xin Yu",
+  occupation: "Developer • Designer",
+  email: "chuahxinyu2@gmail.com",
+};
+import Hero from "../components/Hero/Hero.astro";
+import Navigation from "../components/Navigation.astro";
 ---
 
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<div>Hi, I'm {params.name}</div>
-		<div>
-			{params.occupation}
-		</div>
-		<div>
-			<div>Get in touch</div><div>{params.email}</div>
-		</div>
-		<div>
-			<!-- Illustration -->
-		</div>
-		<div>hover over some items to learn more about me!</div>
-	</body>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Xin Yu C.</title>
+  </head>
+  <body>
+    <!-- <Navigation /> -->
+    <div class="text-slate-700 font-medium flex h-screen">
+      <div class="my-auto">
+        <div class="px-1 text-base font-medium">
+          Hi, I'm <span>{params.name}</span>
+        </div>
+        <div class="text-7xl text-slate-900 font-bold">
+          {params.occupation}
+        </div>
+        <div>
+          <div class="px-1">
+            Get in touch <span class="underline">{params.email}</span>
+          </div>
+        </div>
+      </div>
+      <Hero />
+    </div>
+  </body>
 </html>
