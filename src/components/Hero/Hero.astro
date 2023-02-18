@@ -4,29 +4,48 @@ import Cup from "./Cup";
 import Laptop from "./Laptop";
 import Table from "./Table";
 import Ukulele from "./Ukulele";
+const params = {
+  email: "chuahxinyu2@gmail.com",
+};
 ---
-<style>
-  .container{
-    
-  }
-  .center {
-    margin: 0 auto;
-  }
-</style>
 
-<div class="absolute flex h-screen right-4">
-  <div class="center">
-    <span class="absolute -top-20 right-10"><Bulb client:load/></span>
-    <div class="flex items-baseline top-64 justify-around">
-      <div class="flex items-baseline justify-around">
-        <Cup />
-        <Laptop />
+<section>
+  <span class="absolute lg:left-1/4"><Bulb client:load /></span>
+  <div
+    class="container flex flex-col justify-center mx-auto sm:py-12 lg:py-24 lg:flex-row text-slate-700 font-medium h-screen"
+  >
+    <div
+      class="flex flex-col justify-center p-6 lg:max-w-xs xl:max-w-xl lg:text-left z-30 text-center"
+    >
+      <div class="my-auto">
+        <div class="px-1 text-base font-medium">
+          Hi, I'm <span>Xin Yu</span>
+        </div>
+        <div class="text-7xl text-slate-900 font-bold">Web Developer</div>
+        <div>
+          <div class="px-1">
+            Get in touch <span class="underline">{params.email}</span>
+          </div>
+        </div>
       </div>
-      <span class="pb-20">
-        <Ukulele />
-      </span>
     </div>
-    <Table />
-    <div class="text-sm font-normal">hover over some items to learn more about me!</div>
+    <div
+      class="flex items-center justify-center p-6 mt-8 lg:mt-0 h-72 sm:h-80 lg:h-full xl:h-112 2xl:h-128"
+    >
+      <div>
+        <div class="flex items-baseline top-64 justify-around">
+          <Cup />
+          <span class="z-10"><Laptop client:load /></span>
+          <span class="pb-20">
+            <Ukulele />
+          </span>
+        </div>
+        <Table />
+        <!-- This part sounds kind of narcissistic atm lol
+        <div class="text-sm font-normal">
+          hover over some items to learn more about me!
+        </div> -->
+      </div>
+    </div>
   </div>
-</div>
+</section>

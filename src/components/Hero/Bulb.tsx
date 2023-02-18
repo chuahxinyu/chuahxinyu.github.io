@@ -6,7 +6,7 @@ const Bulb = () => {
     <div>
       <svg
         width="409"
-        height="535"
+        height="635"
         viewBox="0 0 409 535"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
@@ -17,7 +17,7 @@ const Bulb = () => {
           r="204.5"
           fill="url(#paint0_radial_621_1578)"
         />
-        <path d="M205 305V-11" stroke="#A2A2A2" strokeWidth="5" />
+        <path d="M205 505V-11" stroke="#A2A2A2" strokeWidth="5" transform="translate(0, -200)" />
 
         {isBulbOn ? (
           <g>

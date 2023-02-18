@@ -1,11 +1,5 @@
 ---
-const params = {
-  name: "Xin Yu",
-  occupation: "Developer • Designer",
-  email: "chuahxinyu2@gmail.com",
-};
 import Hero from "../components/Hero/Hero.astro";
-import Navigation from "../components/Navigation.astro";
 ---
 
 <html lang="en">
@@ -18,21 +12,6 @@ import Navigation from "../components/Navigation.astro";
   </head>
   <body>
     <!-- <Navigation /> -->
-    <div class="text-slate-700 font-medium flex h-screen">
-      <div class="my-auto">
-        <div class="px-1 text-base font-medium">
-          Hi, I'm <span>{params.name}</span>
-        </div>
-        <div class="text-7xl text-slate-900 font-bold">
-          {params.occupation}
-        </div>
-        <div>
-          <div class="px-1">
-            Get in touch <span class="underline">{params.email}</span>
-          </div>
-        </div>
-      </div>
-      <Hero />
-    </div>
+    <Hero />
   </body>
 </html>
