@@ -11,7 +11,7 @@ const params = {
 ---
 
 <section>
-  <div class="absolute lg:left-1/4 lg:bottom-1/4 flex flex-col">
+  <div class="absolute lg:left-1/4 lg:-top-10 flex flex-col">
     <BulbLine />
     <Bulb client:load />
   </div>
@@ -27,8 +27,10 @@ const params = {
         </div>
         <div class="text-7xl text-slate-900 font-bold">Web Developer</div>
         <div>
-          <div class="px-1">
-            Get in touch <span class="underline">{params.email}</span>
+          <div class="px-1 z-50">
+            Get in touch <span class="underline hover:cursor-pointer"
+              >{params.email}</span
+            >
           </div>
         </div>
       </div>

@@ -3,15 +3,14 @@ import React, { useState } from "react";
 const Bulb = () => {
   const [isBulbOn, setIsBulbOn] = useState(false);
   return (
-    <div className="absolute">
+    <div className="absolute z-10">
       <svg
         width="409"
         height="635"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
       >
-
-        <g className="z-20 relative">
+        <g>
           <circle
             cx="204.5"
             cy="330.5"
