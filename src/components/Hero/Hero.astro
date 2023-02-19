@@ -1,0 +1,63 @@
+---
+import Bulb from "./Bulb.astro";
+import BulbLine from "./BulbLine.astro";
+import Cup from "./Cup.astro";
+import Laptop from "./Laptop.astro";
+import Table from "./Table.astro";
+import Ukulele from "./Ukulele.astro";
+const params = {
+  email: "chuahxinyu2@gmail.com",
+};
+---
+
+<section>
+  <div class="absolute lg:left-1/4 lg:-top-10 flex flex-col">
+    <BulbLine />
+    <Bulb />
+  </div>
+  <div
+    class="container flex flex-col justify-center mx-auto sm:py-12 lg:py-24 lg:flex-row text-slate-700 font-medium"
+  >
+    <div
+      class="flex flex-col justify-center p-6 lg:max-w-xs xl:max-w-xl lg:text-left text-center"
+    >
+      <div class="my-auto">
+        <p>Hi, I'm Xin Yu</p>
+        <h1
+          class="font-bold text-text-heading text-4xl md:text-5xl pt-4 pb-2 overflow-hidden"
+        >
+          <span
+            class="bg-gradient-to-bl bg-no-repeat bg-bottom bg-[length:90%_40%] from-primary-blue to-primary-blue dark:from-primary-blue dark:to-primary-blue"
+          >
+            Web Developer
+          </span>
+        </h1>
+        <div>
+          <div class="px-1 z-50">
+            Get in touch <span class="underline hover:cursor-pointer"
+              >{params.email}</span
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="flex items-center justify-center p-6 mt-8 lg:mt-0 h-72 sm:h-80 lg:h-full xl:h-112 2xl:h-128"
+    >
+      <div>
+        <div class="flex items-baseline top-64 justify-around">
+          <Cup />
+          <span class="z-10"><Laptop /></span>
+          <span class="pb-20">
+            <Ukulele />
+          </span>
+        </div>
+        <Table />
+        <!-- This part sounds kind of narcissistic atm lol
+        <div class="text-sm font-normal">
+          hover over some items to learn more about me!
+        </div> -->
+      </div>
+    </div>
+  </div>
+</section>
