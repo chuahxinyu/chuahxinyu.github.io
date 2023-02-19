@@ -22,18 +22,18 @@ const sortedProjects = projects
 <PageLayout>
   <PageMeta title={`Projects | ${SITE_TITLE}`} slot="meta" />
   <section slot="main">
-    <ul>
-      {
-        sortedProjects.map((project) => {
-          const formattedDate = new Date(
-            project.frontmatter.date
-          ).toLocaleDateString("en-us", {
-            year: "numeric",
-            month: "short",
-            day: "numeric",
-          });
-          return (
-            <li class="grid grid-cols-[1fr] md:grid-cols-[1fr_auto] mb-3 md:gap-2 items-start">
+    {
+      sortedProjects.map((project) => {
+        const formattedDate = new Date(
+          project.frontmatter.date
+        ).toLocaleDateString("en-us", {
+          year: "numeric",
+          month: "short",
+          day: "numeric",
+        });
+        return (
+          <div class="py-3">
+            <div class="grid grid-cols-[1fr] md:grid-cols-[1fr_auto] md:gap-2 items-start">
               <div class="title">
                 <a
                   href={project.frontmatter.url}
@@ -56,10 +56,13 @@ const sortedProjects = projects
                   {formattedDate}
                 </time>
               </div>
-            </li>
-          );
-        })
-      }
-    </ul>
+            </div>
+            <div class="text-text-muted text-xs pt-0 pl-3">
+              {project.frontmatter.description}
+            </div>
+          </div>
+        );
+      })
+    }
   </section>
 </PageLayout>
