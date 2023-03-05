@@ -3,11 +3,15 @@ import PageMeta from "../components/PageMeta.astro";
 import PageLayout from "../layouts/PageLayout.astro";
 import { SITE_TITLE } from "../config";
 import Hero from "src/components/Hero/Hero.astro";
-import Intro from "src/components/Intro.astro";
+
+const TAGLINES = ['Hackathon Addict', 'Web Developer', 'Tetris Master', 'Total Nerd', 'Marvel Fan']
+const randomNumber = Math.floor(Math.random()*TAGLINES.length)
+const randomTagline = `${TAGLINES[randomNumber]} 👓`
+
 ---
 
 <PageLayout>
-  <PageMeta title={`${SITE_TITLE} | Hackathon Addict`} slot="meta" />
+  <PageMeta title={`${SITE_TITLE} | ${randomTagline}`} slot="meta" />
   <Fragment slot="main">
     <Hero />
   </Fragment>

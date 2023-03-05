@@ -3,9 +3,10 @@
 
 export const SITE_TITLE = "Xin Yu";
 export const SITE_DESCRIPTION =
-  "";
-export const TWITTER_HANDLE = "@yourtwitterhandle";
+  "Xin Yu's little corner of the internet.";
+// export const TWITTER_HANDLE = "@yourtwitterhandle";
 export const MY_NAME = "Xin Yu";
+export const GITHUB_USERNAME = "chuahxinyu";
 
 // setup in astro.config.mjs
 const BASE_URL = new URL(import.meta.env.SITE);
