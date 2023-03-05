@@ -14,10 +14,10 @@ const formattedDate = new Date(project.frontmatter.date).toLocaleDateString(
 
 
 let link = ''
-if (project.frontmatter.github) {
-    link = `https://github.com/${GITHUB_USERNAME}/${project.frontmatter.github}`
-} else if (project.frontmatter.url) {
-    link = project.frontmatter.url
+if (project.frontmatter.url) {
+  link = project.frontmatter.url
+} else if (project.frontmatter.github) {
+  link = `https://github.com/${GITHUB_USERNAME}/${project.frontmatter.github}`
 }
 
 ---
