@@ -2,7 +2,6 @@
 import { defineConfig } from "astro/config";
 import sitemap from "@astrojs/sitemap";
 import tailwind from "@astrojs/tailwind";
-import {GITHUB_USERNAME} from './src/config'
 
 /* 
   We are doing some URL mumbo jumbo here to tell Astro what the URL of your website will be.
@@ -15,11 +14,11 @@ import {GITHUB_USERNAME} from './src/config'
 */
 import react from "@astrojs/react";
 const SERVER_PORT = 3000;
-const SITE = `https://${GITHUB_USERNAME}.github.io`
+const SITE_URL = `https://chuahxinyu.github.io`
 
 // https://astro.build/config
 export default defineConfig({
-  site: SITE,
+  site: SITE_URL,
   server: {
     port: SERVER_PORT
   },
