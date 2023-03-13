@@ -98,6 +98,9 @@ export const config: Config = {
       },
       selfClosing: true,
     },
+    pycode: {
+      render: "PythonCode",
+    },
   },
   nodes: {
     heading: {
