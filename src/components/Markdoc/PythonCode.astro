@@ -1,0 +1,98 @@
+---
+---
+
+<head>
+  <script src="https://cdn.jsdelivr.net/pyodide/v0.22.1/full/pyodide.js"
+  ></script>
+</head>
+
+<h1>Python Code</h1>
+<button id="runcode"><i class="fa-solid fa-play"></i> Run Code</button>
+<span id="code" hidden><slot /></span>
+<div id="editor"></div>
+<div id="output"></div>
+
+<script>
+  import { basicSetup, EditorView } from "codemirror";
+  import { keymap, lineNumbers } from "@codemirror/view";
+  import { EditorState, Compartment } from "@codemirror/state";
+  import { indentWithTab } from "@codemirror/commands";
+  import { python } from "@codemirror/lang-python";
+  import { loadPyodide } from "pyodide";
+  import {
+    runCode,
+    setEngine,
+    setOptions,
+    PythonError,
+  } from "client-side-python-runner";
+
+  // Python Code as string
+  const code = (document.querySelector("#code") as Element)
+    .textContent as string;
+
+  // Editor Setup and View
+  let language = new Compartment(),
+    tabSize = new Compartment();
+  let state = EditorState.create({
+    doc: code,
+    extensions: [
+      basicSetup,
+      language.of(python()),
+      keymap.of([indentWithTab]),
+      tabSize.of(EditorState.tabSize.of(4)),
+    ],
+  });
+  let view = new EditorView({
+    state,
+    parent: document.querySelector("#editor") as Element,
+  });
+
+  // Output Setup and View
+  let state2 = EditorState.create({
+    doc: "Click on the Run Code button to run the code.",
+    extensions: [
+      basicSetup,
+      EditorState.readOnly.of(true),
+      lineNumbers({ formatNumber: () => "" }),
+    ],
+  });
+  let view2 = new EditorView({
+    state: state2,
+    parent: document.querySelector("#output") as Element,
+  });
+
+  const updateOutput = (newText: string, clearCurrent: boolean = false) => {
+    let transaction = view2.state.update({
+      changes: { from: 0, to: view2.state.doc.length, insert: `${newText}` },
+    });
+    if (!clearCurrent) {
+      transaction = view2.state.update({
+        changes: { from: view2.state.doc.length, insert: `${newText}` },
+      });
+    }
+    // console.log({ transaction: transaction.state.doc.toString() });
+    view2.dispatch(transaction);
+  };
+
+  setOptions({
+    output: (output) => {
+      updateOutput(output);
+    },
+    error: (error) => {
+      console.log({ error: error });
+      updateOutput(
+        "\n=== ERROR ===\n" + (error as PythonError)["error"].message
+      );
+    },
+    pythonVersion: 3,
+  });
+
+  await setEngine("pyodide");
+
+  // Run Code Button
+  const runcode_button = document.querySelector("#runcode") as Element;
+  runcode_button.addEventListener("click", async () => {
+    updateOutput("", true);
+    await runCode(view.state.doc.toString());
+  });
+</script>
