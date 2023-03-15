@@ -52,7 +52,6 @@
   const runCodeButtonArray = document.querySelectorAll(
     "#runcode"
   ) as NodeListOf<Element>;
-  console.log({ codeArray: codeArray });
   codeArray.forEach((codeBlock, i) => {
     const code = codeBlock.textContent as string;
     const editor = editorArray[i];
@@ -61,19 +60,14 @@
     output.id = `output${i}`;
     const runCodeButton = runCodeButtonArray[i];
     runCodeButton.id = `runcode${i}`;
-
-    console.log({
-      i: i,
-      code: code,
-      editor: editorArray[i],
-      output: outputArray[i],
-    });
+    const localStorageRef = `${window.location.href}-pycode-${i}`;
+    const localStorageVal = localStorage.getItem(localStorageRef);
 
     // Editor Setup and View
     let language = new Compartment(),
       tabSize = new Compartment();
     let state = EditorState.create({
-      doc: code,
+      doc: localStorageVal ? localStorageVal : code,
       extensions: [
         basicSetup,
         language.of(python()),
@@ -119,6 +113,9 @@
       });
       updateOutput("", true, view2);
       await runCode(view.state.doc.toString());
+
+      // Save codeBlock content to local storage
+      localStorage.setItem(localStorageRef, view.state.doc.toString());
     });
   });
 </script>
