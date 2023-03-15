@@ -6,7 +6,7 @@
   ></script>
 </head>
 
-<h1>Python Code</h1>
+<!-- <h1>Python Code</h1> -->
 <button id="runcode"><i class="fa-solid fa-play"></i> Run Code</button>
 <span id="code" hidden><slot /></span>
 <div id="editor"></div>
@@ -18,7 +18,6 @@
   import { EditorState, Compartment } from "@codemirror/state";
   import { indentWithTab } from "@codemirror/commands";
   import { python } from "@codemirror/lang-python";
-  import { loadPyodide } from "pyodide";
   import {
     runCode,
     setEngine,
@@ -26,42 +25,12 @@
     PythonError,
   } from "client-side-python-runner";
 
-  // Python Code as string
-  const code = (document.querySelector("#code") as Element)
-    .textContent as string;
-
-  // Editor Setup and View
-  let language = new Compartment(),
-    tabSize = new Compartment();
-  let state = EditorState.create({
-    doc: code,
-    extensions: [
-      basicSetup,
-      language.of(python()),
-      keymap.of([indentWithTab]),
-      tabSize.of(EditorState.tabSize.of(4)),
-    ],
-  });
-  let view = new EditorView({
-    state,
-    parent: document.querySelector("#editor") as Element,
-  });
-
-  // Output Setup and View
-  let state2 = EditorState.create({
-    doc: "Click on the Run Code button to run the code.",
-    extensions: [
-      basicSetup,
-      EditorState.readOnly.of(true),
-      lineNumbers({ formatNumber: () => "" }),
-    ],
-  });
-  let view2 = new EditorView({
-    state: state2,
-    parent: document.querySelector("#output") as Element,
-  });
-
-  const updateOutput = (newText: string, clearCurrent: boolean = false) => {
+  const updateOutput = (
+    newText: string,
+    clearCurrent: boolean = false,
+    view2: EditorView
+  ) => {
+    console.log(view2);
     let transaction = view2.state.update({
       changes: { from: 0, to: view2.state.doc.length, insert: `${newText}` },
     });
@@ -70,29 +39,86 @@
         changes: { from: view2.state.doc.length, insert: `${newText}` },
       });
     }
-    // console.log({ transaction: transaction.state.doc.toString() });
     view2.dispatch(transaction);
   };
 
-  setOptions({
-    output: (output) => {
-      updateOutput(output);
-    },
-    error: (error) => {
-      console.log({ error: error });
-      updateOutput(
-        "\n=== ERROR ===\n" + (error as PythonError)["error"].message
-      );
-    },
-    pythonVersion: 3,
-  });
+  const codeArray = document.querySelectorAll("#code") as NodeListOf<Element>;
+  const editorArray = document.querySelectorAll(
+    "#editor"
+  ) as NodeListOf<Element>;
+  const outputArray = document.querySelectorAll(
+    "#output"
+  ) as NodeListOf<Element>;
+  const runCodeButtonArray = document.querySelectorAll(
+    "#runcode"
+  ) as NodeListOf<Element>;
+  console.log({ codeArray: codeArray });
+  codeArray.forEach((codeBlock, i) => {
+    const code = codeBlock.textContent as string;
+    const editor = editorArray[i];
+    editor.id = `editor${i}`;
+    const output = outputArray[i];
+    output.id = `output${i}`;
+    const runCodeButton = runCodeButtonArray[i];
+    runCodeButton.id = `runcode${i}`;
 
-  await setEngine("pyodide");
+    console.log({
+      i: i,
+      code: code,
+      editor: editorArray[i],
+      output: outputArray[i],
+    });
 
-  // Run Code Button
-  const runcode_button = document.querySelector("#runcode") as Element;
-  runcode_button.addEventListener("click", async () => {
-    updateOutput("", true);
-    await runCode(view.state.doc.toString());
+    // Editor Setup and View
+    let language = new Compartment(),
+      tabSize = new Compartment();
+    let state = EditorState.create({
+      doc: code,
+      extensions: [
+        basicSetup,
+        language.of(python()),
+        keymap.of([indentWithTab]),
+        tabSize.of(EditorState.tabSize.of(4)),
+      ],
+    });
+    let view = new EditorView({
+      state,
+      parent: editor,
+    });
+
+    // Output Setup and View
+    let state2 = EditorState.create({
+      doc: `${i}: Click on the Run Code button to run the code.`,
+      extensions: [
+        basicSetup,
+        EditorState.readOnly.of(true),
+        lineNumbers({ formatNumber: () => "" }),
+      ],
+    });
+    let view2 = new EditorView({
+      state: state2,
+      parent: output,
+    });
+
+    // Run Code Button
+    runCodeButton.addEventListener("click", async () => {
+      await setEngine("pyodide");
+      setOptions({
+        output: (output) => {
+          updateOutput(output, false, view2);
+        },
+        error: (error) => {
+          console.log({ error: error });
+          updateOutput(
+            "\n=== ERROR ===\n" + (error as PythonError)["error"].message,
+            false,
+            view2
+          );
+        },
+        pythonVersion: 3,
+      });
+      updateOutput("", true, view2);
+      await runCode(view.state.doc.toString());
+    });
   });
 </script>
