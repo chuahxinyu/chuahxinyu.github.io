@@ -96,7 +96,7 @@
 
     // Run Code Button
     runCodeButton.addEventListener("click", async () => {
-      await setEngine("pyodide");
+      await setEngine('skulpt');
       setOptions({
         output: (output) => {
           updateOutput(output, false, view2);
