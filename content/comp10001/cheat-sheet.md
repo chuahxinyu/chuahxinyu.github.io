@@ -2,7 +2,7 @@
 external: false
 title: "Python CheatSheet"
 description: "Cheatsheet of Python Functions from Grok Worksheets and Lectures made in Sem 1 2021"
-date: 2022-11-01
+date: 2022-01-01
 ---
 
 ## Printing & Inputting
