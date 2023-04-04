@@ -101,6 +101,13 @@ export const config: Config = {
     pycode: {
       render: "PythonCode",
     },
+    toast: {
+      render: "Toast",
+      attributes: {
+        type: { type: String, required: true },
+        summary: { type: String, default: "" },
+      },
+    },
   },
   nodes: {
     heading: {

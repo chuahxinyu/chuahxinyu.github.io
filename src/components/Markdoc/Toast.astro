@@ -1,0 +1,22 @@
+---
+const { type, summary } = Astro.props;
+const infoIcon = "fa-circle-info";
+---
+
+<div class="bg-amber-100 p-3 my-3 rounded-md">
+  {
+    type.includes("col") ? (
+      <details>
+        <summary class="cursor-pointer">
+          <span class={`fa-solid mx-2`} />
+          {summary}
+        </summary>
+        <slot />
+      </details>
+    ) : (
+      <span class="!m-0">
+        <slot class="!m-0" />
+      </span>
+    )
+  }
+</div>

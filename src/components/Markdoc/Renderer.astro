@@ -8,6 +8,7 @@ import GitHubGistEmbed from "./GitHubGistEmbed.astro";
 import CodeBlock from "./CodeBlock.astro";
 import Heading from "./Heading.astro";
 import PythonCode from "./PythonCode.astro";
+import Toast from "./Toast.astro";
 
 type Props = {
   content: Content;
@@ -44,6 +45,10 @@ const components = {
     Component: PythonCode,
     props: {},
   },
+  Toast: {
+    Component: Toast,
+    props: {},
+  }
 };
 ---
 
