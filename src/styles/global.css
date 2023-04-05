@@ -206,6 +206,11 @@
     }
   }
 
+  .toast {
+    background-color: rgb(var(--color-primary-yellow));
+    color: black;
+  }
+
   /* ------ GLOBAL STYLES - END ------ */
 
   /* ------ REUSABLE UTILS - START ------ */

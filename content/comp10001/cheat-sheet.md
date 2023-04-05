@@ -219,6 +219,7 @@ for p0, p1 in permutations ("ABC", 2):
         |                                     `window` (int)                                     |  sets formatted windoe to be int characters long(default=length of fomatted value)   |
         |                                   `.precision` (int)                                   | formats the number to int decimal places // indicates number of characters in string |
         | `f` float<br>`s` string<br>`g` 'optimal' float<br>`d` integer<br>`c` Unicode character |                                    (default=auto)                                    |
+- `string_separator.join(iterable)` returns a string created by joining the elements of an iterable by the given string separator
 
 ### Float
 
