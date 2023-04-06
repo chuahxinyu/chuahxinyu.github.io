@@ -108,6 +108,17 @@ export const config: Config = {
         summary: { type: String, default: "" },
       },
     },
+    mermaid: {
+      render: "Mermaid",
+      attributes: {
+        process: { type: Boolean, render: false, default: false },
+      },
+      transform(node, config) {
+        const attributes = node.transformAttributes(config);
+        const children = node.transformChildren(config);
+        return new Tag(this.render, { ...attributes }, children);
+      },
+    },
   },
   nodes: {
     heading: {

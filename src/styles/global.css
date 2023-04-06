@@ -211,6 +211,10 @@
     color: black;
   }
 
+  .mermaid {
+    overflow: hidden;
+  }
+
   /* ------ GLOBAL STYLES - END ------ */
 
   /* ------ REUSABLE UTILS - START ------ */

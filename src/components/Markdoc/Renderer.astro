@@ -9,6 +9,7 @@ import CodeBlock from "./CodeBlock.astro";
 import Heading from "./Heading.astro";
 import PythonCode from "./PythonCode.astro";
 import Toast from "./Toast.astro";
+import Mermaid from "./Mermaid.astro";
 
 type Props = {
   content: Content;
@@ -48,7 +49,11 @@ const components = {
   Toast: {
     Component: Toast,
     props: {},
-  }
+  },
+  Mermaid: {
+    Component: Mermaid,
+    props: {},
+  },
 };
 ---
 

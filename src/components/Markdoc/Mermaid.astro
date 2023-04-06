@@ -1,0 +1,44 @@
+---
+---
+
+<span id="mermaid-code"><slot /></span>
+<pre class="mermaid"></pre>
+
+<script>
+  const slotCode = document.querySelectorAll("#mermaid-code");
+  console.log(slotCode);
+
+  const mermaidCode = document.querySelectorAll(".mermaid");
+  for (let i = 0; i < mermaidCode.length; i++) {
+    mermaidCode[i].innerHTML = (slotCode[i] as HTMLElement).innerText;
+  }
+</script>
+
+<script type="module">
+  import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs";
+  mermaid.initialize({ startOnLoad: true });
+  console.log("Loaded Mermaid!");
+</script>
+
+<script>
+  import svgPanZoom from "svg-pan-zoom";
+
+  //   const mermaidSvg = document.querySelectorAll("svg");
+  //   console.log({ mermaidSvg1: mermaidSvg });
+
+  const mermaidSvg = document.getElementsByTagName("svg");
+  //   console.log(mermaidSvg2);
+
+  window.addEventListener("load", function () {
+    console.log({ window: window });
+    console.log(document);
+    // const mermaidSvg = document.querySelectorAll("svg");
+    const mermaidSvg = document.getElementsByTagName("svg");
+    console.log(mermaidSvg);
+    console.log({ mermaidSvg: mermaidSvg, length: mermaidSvg.length });
+    for (let i = 0; i < mermaidSvg.length; i++) {
+      const panZoomInstance = svgPanZoom(mermaidSvg[i]);
+      console.log(panZoomInstance);
+    }
+  });
+</script>
