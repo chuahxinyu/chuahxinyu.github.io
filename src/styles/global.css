@@ -215,6 +215,7 @@
     overflow: hidden;
   }
 
+  /* TOOLTIP from https://codepen.io/reiinii1/pen/aPGXEa */
   /* 
   You want a simple and fancy tooltip?
   Just copy all [data-tooltip] blocks:
@@ -222,7 +223,6 @@
   [data-tooltip] {
     --arrow-size: 5px;
     position: relative;
-    z-index: 50;
   }
 
   /* Positioning and visibility settings of the tooltip */
@@ -243,7 +243,7 @@
     content: attr(data-tooltip);
     padding: 10px 18px;
     min-width: 50px;
-    max-width: 300px;
+    max-width: 200px;
     width: max-content;
     width: -moz-max-content;
     border-radius: 6px;
@@ -260,6 +260,7 @@
     text-align: center;
     white-space: pre-wrap;
     transform: translate(-50%, calc(0px - var(--arrow-size))) scale(0.5);
+    z-index: 50;
   }
 
   /* Tooltip arrow */
