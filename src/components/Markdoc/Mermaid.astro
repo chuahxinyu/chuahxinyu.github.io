@@ -1,16 +1,31 @@
 ---
 ---
 
-<span id="mermaid-code"><slot /></span>
-<pre class="mermaid"></pre>
+<button class="code-button text-xs m-0 mb-1" id="show-hide-button"
+  >Show/Hide Mermaid Source Code</button
+>
+<span id="mermaid-code" class="hidden"><slot /></span>
+<pre class="mermaid mt-0"></pre>
 
 <script>
-  const slotCode = document.querySelectorAll("#mermaid-code");
-  console.log(slotCode);
+  const mermaidCodes = document.querySelectorAll("#mermaid-code");
+  console.log({ mermaidCodes: mermaidCodes });
 
-  const mermaidCode = document.querySelectorAll(".mermaid");
-  for (let i = 0; i < mermaidCode.length; i++) {
-    mermaidCode[i].innerHTML = (slotCode[i] as HTMLElement).innerText;
+  const mermaidDiagrams = document.querySelectorAll(".mermaid");
+  const showHideButtons = document.querySelectorAll("#show-hide-button");
+
+  for (let i = 0; i < mermaidDiagrams.length; i++) {
+    const mermaidCode = mermaidCodes[i] as HTMLElement;
+    const mermaidDiagram = mermaidDiagrams[i] as HTMLElement;
+
+    mermaidDiagram.innerHTML = mermaidCode.innerText;
+    const showHideButton = showHideButtons[i] as HTMLElement;
+    const isShowMermaid = showHideButton.dataset.showMermaid;
+    console.log({ isShowMermaid: isShowMermaid });
+
+    showHideButtons[i].addEventListener("click", () => {
+      mermaidCode.classList.toggle("hidden");
+    });
   }
 </script>
 
@@ -20,25 +35,4 @@
   console.log("Loaded Mermaid!");
 </script>
 
-<script>
-  import svgPanZoom from "svg-pan-zoom";
-
-  //   const mermaidSvg = document.querySelectorAll("svg");
-  //   console.log({ mermaidSvg1: mermaidSvg });
-
-  const mermaidSvg = document.getElementsByTagName("svg");
-  //   console.log(mermaidSvg2);
-
-  window.addEventListener("load", function () {
-    console.log({ window: window });
-    console.log(document);
-    // const mermaidSvg = document.querySelectorAll("svg");
-    const mermaidSvg = document.getElementsByTagName("svg");
-    console.log(mermaidSvg);
-    console.log({ mermaidSvg: mermaidSvg, length: mermaidSvg.length });
-    for (let i = 0; i < mermaidSvg.length; i++) {
-      const panZoomInstance = svgPanZoom(mermaidSvg[i]);
-      console.log(panZoomInstance);
-    }
-  });
-</script>
+<script></script>

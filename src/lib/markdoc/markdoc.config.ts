@@ -100,6 +100,9 @@ export const config: Config = {
     },
     pycode: {
       render: "PythonCode",
+      attributes: {
+        isRunnable: { type: Boolean, default: true },
+      },
     },
     toast: {
       render: "Toast",
@@ -110,14 +113,6 @@ export const config: Config = {
     },
     mermaid: {
       render: "Mermaid",
-      attributes: {
-        process: { type: Boolean, render: false, default: false },
-      },
-      transform(node, config) {
-        const attributes = node.transformAttributes(config);
-        const children = node.transformChildren(config);
-        return new Tag(this.render, { ...attributes }, children);
-      },
     },
   },
   nodes: {

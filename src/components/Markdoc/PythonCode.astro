@@ -1,4 +1,5 @@
 ---
+const { isRunnable } = Astro.props;
 ---
 
 <head>
@@ -6,11 +7,17 @@
   ></script>
 </head>
 
-<!-- <h1>Python Code</h1> -->
-<button id="runcode"><i class="fa-solid fa-play"></i> Run Code</button>
+<div class={isRunnable ? `text-sm` : `text-sm hidden`}>
+  <button id="runcode" class="code-button"
+    ><i class="fa-solid fa-play"></i> Run Code</button
+  >
+  <button id="reset" class="code-button"
+    ><i class="fa-solid fa-rotate-left"></i> Reset</button
+  >
+</div>
 <span id="code" hidden><slot /></span>
 <div id="editor"></div>
-<div id="output"></div>
+<div id="output" class={isRunnable ? `` : `hidden`}></div>
 
 <script>
   import { basicSetup, EditorView } from "codemirror";
@@ -52,27 +59,47 @@
   const runCodeButtonArray = document.querySelectorAll(
     "#runcode"
   ) as NodeListOf<Element>;
+  const resetButtonArray = document.querySelectorAll(
+    "#reset"
+  ) as NodeListOf<Element>;
   codeArray.forEach((codeBlock, i) => {
-    const code = codeBlock.textContent as string;
+    const code = (codeBlock.textContent as string).trim();
+    console.log({ codeBlock: codeBlock });
+    console.log({ code0: code });
     const editor = editorArray[i];
     editor.id = `editor${i}`;
     const output = outputArray[i];
     output.id = `output${i}`;
-    const runCodeButton = runCodeButtonArray[i];
-    runCodeButton.id = `runcode${i}`;
     const localStorageRef = `${window.location.href}-pycode-${i}`;
     const localStorageVal = localStorage.getItem(localStorageRef);
 
     // Editor Setup and View
     let language = new Compartment(),
       tabSize = new Compartment();
+
+    const extensions = [
+      basicSetup,
+      language.of(python()),
+      keymap.of([indentWithTab]),
+      tabSize.of(EditorState.tabSize.of(4)),
+    ];
+
+    // Remove line numbers if output is hidden (isRunnable is false)
+    if (output.classList.contains("hidden")) {
+      extensions.push(lineNumbers({ formatNumber: () => "" }));
+    }
+
     let state = EditorState.create({
       doc: localStorageVal ? localStorageVal : code,
       extensions: [
-        basicSetup,
-        language.of(python()),
-        keymap.of([indentWithTab]),
-        tabSize.of(EditorState.tabSize.of(4)),
+        ...extensions,
+        EditorView.updateListener.of((update) => {
+          // Compare localstorageVal to changed value - if different, save to local storage
+          if (update.transactions.some((tr) => tr.docChanged)) {
+            console.log("change");
+            localStorage.setItem(localStorageRef, update.state.doc.toString());
+          }
+        }),
       ],
     });
     let view = new EditorView({
@@ -95,8 +122,10 @@
     });
 
     // Run Code Button
+    const runCodeButton = runCodeButtonArray[i];
+    runCodeButton.id = `runcode${i}`;
     runCodeButton.addEventListener("click", async () => {
-      await setEngine('skulpt');
+      await setEngine("skulpt");
       setOptions({
         output: (output) => {
           updateOutput(output, false, view2);
@@ -104,7 +133,7 @@
         error: (error) => {
           console.log({ error: error });
           updateOutput(
-            "\n=== ERROR ===\n" + (error as PythonError)["error"].message,
+            "\n=== ERROR ===\n" + (error as PythonError)["error"],
             false,
             view2
           );
@@ -113,9 +142,33 @@
       });
       updateOutput("", true, view2);
       await runCode(view.state.doc.toString());
+    });
 
-      // Save codeBlock content to local storage
-      localStorage.setItem(localStorageRef, view.state.doc.toString());
+    // Reset Code Button
+    const resetButton = resetButtonArray[i];
+    resetButton.id = `resetcode${i}`;
+    resetButton.addEventListener("click", () => {
+      console.log("Reset Code");
+      if (view.state.doc.toString() != code) {
+        if (
+          !confirm(
+            "Are you sure you want to reset this code block? This will delete your saved edits and reset the code to the original. This cannot be undone."
+          )
+        ) {
+          return;
+        }
+      }
+      localStorage.setItem(localStorageRef, code);
+      let transaction = view.state.update({
+        changes: { from: 0, to: view.state.doc.length, insert: code },
+      });
+      view.dispatch(transaction);
+      console.log({ code: code });
+      updateOutput(
+        `${i}: Click on the Run Code button to run the code.`,
+        true,
+        view2
+      );
     });
   });
 </script>

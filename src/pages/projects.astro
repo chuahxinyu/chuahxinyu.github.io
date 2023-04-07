@@ -12,7 +12,9 @@ const projects = await readAll({
 });
 
 const sortedProjects = projects
-  .filter((p) => p.frontmatter.draft !== true && p.frontmatter.featured !== true)
+  .filter(
+    (p) => p.frontmatter.draft !== true && p.frontmatter.featured !== true
+  )
   .sort(
     (a, b) =>
       new Date(b.frontmatter.date).valueOf() -
@@ -21,13 +23,11 @@ const sortedProjects = projects
 ---
 
 <PageLayout>
-  <PageMeta title={`Projects | ${SITE_TITLE}`} slot="meta" />
+  <PageMeta title={`👩‍💻 Projects | ${SITE_TITLE}`} slot="meta" />
   <section slot="main">
     {
       sortedProjects.map((project) => {
-        return (
-          <Project project={project}/>
-        );
+        return <Project project={project} />;
       })
     }
   </section>
