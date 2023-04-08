@@ -206,11 +206,6 @@
     }
   }
 
-  .toast {
-    background-color: rgb(var(--color-primary-yellow));
-    color: black;
-  }
-
   .mermaid {
     overflow: hidden;
   }
