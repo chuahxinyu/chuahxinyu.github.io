@@ -10,6 +10,7 @@ import Heading from "./Heading.astro";
 import PythonCode from "./PythonCode.astro";
 import Toast from "./Toast.astro";
 import Mermaid from "./Mermaid.astro";
+import CodeSandboxEmbed from "./CodeSandboxEmbed.astro";
 
 type Props = {
   content: Content;
@@ -36,6 +37,10 @@ const components = {
   },
   CodePenEmbed: {
     Component: CodePenEmbed,
+    props: {},
+  },
+  CodeSandboxEmbed: {
+    Component: CodeSandboxEmbed,
     props: {},
   },
   GitHubGistEmbed: {
