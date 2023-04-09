@@ -115,7 +115,9 @@ It is worth noting that Code Sandbox also offers other deployment options that a
 
 > https://www.w3schools.com/css/
 
-{% codepen url="https://codepen.io/chuahxinyu/pen/WNabWWM" title="CSS Basics by Xin Yu" /%}
+{% codepen url="https://codepen.io/chuahxinyu/pen/PoyqqJE" title="CSS Basics (Starter) by Xin Yu" /%}
+
+{% codepen url="https://codepen.io/chuahxinyu/pen/WNabWWM" title="CSS Basics (Answer) by Xin Yu" /%}
 
 ### 2.3 JavaScript
 
@@ -257,21 +259,11 @@ export default App;
   {/* Map over the todos state array and render a list item for each todo */}
   {todos.map((task, i) => (
     <li key={task.id} className={task.done ? "done" : ""}>
-      <input
-        type="checkbox"
-        onChange={() => toggleDone(task.id)}
-        checked={task.done}
-      />
+      <input type="checkbox" />
       <span className="title">
         {i + 1}. {task.title}
       </span>
-      <button
-        onClick={() => {
-          deleteTodo(task.id);
-        }}
-      >
-        🗑️
-      </button>
+      <button>🗑️</button>
     </li>
   ))}
 </ul>
@@ -329,6 +321,20 @@ We call a function called `createTodo()`, let's define that function
 
 #### 3.5b toggleDone
 
+Let's add the functionality to toggle a task's `done` property when a user clicks on a task's checkbox.
+
+We once again make use of the `onChange` handler but in the checkbox. When a user clicks on the checkbox, the `onChange` handler is triggered - let's make it call a function `toggleDone()`. We should also set the checkbox state to follow the `done` property by setting the `checked` attribute accordingly.
+
+```jsx
+<input
+  type="checkbox"
+  onChange={() => toggleDone(task.id)}
+  checked={task.done}
+/>
+```
+
+Let's define the function of `toggleDone()`
+
 ```jsx
 // In App.jsx, within the App() function, before the return
 ...
@@ -344,7 +350,31 @@ We call a function called `createTodo()`, let's define that function
 ...
 ```
 
+Adding the strikethrough style to the title of done tasks can be done as follows
+
+```css
+/* In App.css */
+ul li.done .title {
+  text-decoration: line-through;
+  color: #bbb;
+}
+```
+
 #### 3.5c deleteTodo
+
+We want to delete a todo when the user clicks on the trash button (🗑️). To control what happens when the button is pressed, we can use the `onClick` event handler - it runs when the user clicks on whatever element the `onClick` is in. Let's make the `<button>`s handler call a `deleteTodo()` function.
+
+```jsx
+<button
+  onClick={() => {
+    deleteTodo(task.id);
+  }}
+>
+  🗑️
+</button>
+```
+
+Let's define the `deleteTodo()` function as follows
 
 ```jsx
 // In App.jsx, within the App() function, before the return
@@ -361,6 +391,10 @@ We call a function called `createTodo()`, let's define that function
 
 #### 3.5d Local Storage
 
+Great! Now we have the basic functionalities of being able to create, delete and toggle to do tasks. But you will soon realise that when we reload the page, our app does not store our tasks anywhere and refresh back to the default state of `todos` (an empty array), which basiclly deyeets all of our tasks!
+
+Let's add some functionality to store the tasks within the browser's local storage
+
 ```jsx
 // In App.jsx, within the App() function, before the return
 ...
@@ -376,6 +410,8 @@ We call a function called `createTodo()`, let's define that function
   useEffect(() => {
     if (todos.length > 0) {
       localStorage.setItem("todos", JSON.stringify(todos));
+    } else {
+      localStorage.removeItem("todos");
     }
   }, [todos]);
 ...
