@@ -6,7 +6,7 @@ description: "Learn to the basics of HTML, CSS and JavaScript (ReactJS) while bu
 date: 2023-09-04
 ---
 
-> Slides: TODO
+> Slides: [Web Development Workshop Google Slides](https://docs.google.com/presentation/d/1SR-N2hrvNSth4RuIw_Q_f49rc3JapMdW7VecEDjME0Q/edit?usp=sharing)
 
 ## 1 SETUP
 
