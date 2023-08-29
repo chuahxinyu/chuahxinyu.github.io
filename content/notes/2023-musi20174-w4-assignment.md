@@ -24,18 +24,18 @@ In terms of software, I used my phone's built-in voice recorder application ([Sa
 With a goal of having the least amount of ambient noise possible, I don't have too many options for recording locations so I have made all recordings at the desk in my room. I placed each microphone about 20-30cm away from the source. Through a bit of research, the microphones on my phone, laptop and earphones are most likely [omnidirectional microphones](/notes/2023-musi20174-w4/#polar-patterns-and-headroom). This means that they capture sound from all directions equally and as such, the direction in which the microphone is facing does not matter.
 
 - Image of set-up of equipment at my desk
-  ![Equipment setup image](/public/assets/musi20174/equipment-setup.png)
+  ![Equipment setup image](/assets/musi20174/equipment-setup.png)
 
 The recordings and their waveforms are as follows
 
 - Audio Recording on Laptop's Built-in Microphone
-  {% audio mp3Src="/public/assets/musi20174/laptop-built-in.mp3" oggSrc="/public/assets/musi20174/laptop-built-in.ogg" /%}
+  {% audio mp3Src="/assets/musi20174/laptop-built-in.mp3" oggSrc="/assets/musi20174/laptop-built-in.ogg" /%}
 - Audio Recording on Laptop with an External Microphone
-  {% audio mp3Src="/public/assets/musi20174/laptop-external.mp3" oggSrc="/public/assets/musi20174/laptop-external.ogg" /%}
+  {% audio mp3Src="/assets/musi20174/laptop-external.mp3" oggSrc="/assets/musi20174/laptop-external.ogg" /%}
 - Audio Recording on Phone's Microphone
-  {% audio mp3Src="/public/assets/musi20174/phone.mp3" oggSrc="/public/assets/musi20174/phone.ogg" /%}
+  {% audio mp3Src="/assets/musi20174/phone.mp3" oggSrc="/assets/musi20174/phone.ogg" /%}
 - Waveforms of all 3 recordings on Waveform 12
-  ![Waveform diagram](/public/assets/musi20174/waveform.png)
+  ![Waveform diagram](/assets/musi20174/waveform.png)
 
 From the waveforms and the recordings, I observed that:
 
@@ -48,22 +48,22 @@ From the waveforms and the recordings, I observed that:
 On the Laptop, I used Waveform 12's default settings on the laptop and the 'Standard' mode on Samsung Voice Recorder.
 
 - Image of Waveform 12 recording settings (used for both built-in and external microphone recordings)
-  ![Recording Settings](/public/assets/musi20174/recording-settings.png)
+  ![Recording Settings](/assets/musi20174/recording-settings.png)
 - Image of Samsung Voice Recorder settings
-  ![Phone Recording Settings](/public//assets//musi20174/samsung-voice-recorder.png)
+  ![Phone Recording Settings](/assets/musi20174/samsung-voice-recorder.png)
 
 I added an Normalise Layer to each of the clips to bring the amplitude to a target level (the norm) by applying a constant amount of gain to the audio recording.
 
 - Gif of how normalising a clip affects its waveform's amplitude
-  ![](/public/assets/musi20174/normalising.gif)
+  ![](/assets/musi20174/normalising.gif)
 - Image of waveforms of the recordings after applying normalisation
-  ![](/public/assets/musi20174/waveform-normalised.png)
+  ![](/assets/musi20174/waveform-normalised.png)
 - Audio Recording on Laptop's Built-in Microphone after Normalising
-  {% audio mp3Src="/public/assets/musi20174/laptop-built-in-normalised.mp3" oggSrc="/public/assets/musi20174/laptop-built-in-normalised.ogg" /%}
+  {% audio mp3Src="/assets/musi20174/laptop-built-in-normalised.mp3" oggSrc="/assets/musi20174/laptop-built-in-normalised.ogg" /%}
 - Audio Recording on Laptop with an External Microphone after Normalising
-  {% audio mp3Src="/public/assets/musi20174/laptop-external-normalised.mp3" oggSrc="/public/assets/musi20174/laptop-external-normalised.ogg" /%}
+  {% audio mp3Src="/assets/musi20174/laptop-external-normalised.mp3" oggSrc="/assets/musi20174/laptop-external-normalised.ogg" /%}
 - Audio Recording on Phone's Microphone after Normalising
-  {% audio mp3Src="/public/assets/musi20174/phone-normalised.mp3" oggSrc="/public/assets/musi20174/phone-normalised.ogg" /%}
+  {% audio mp3Src="/assets/musi20174/phone-normalised.mp3" oggSrc="/assets/musi20174/phone-normalised.ogg" /%}
 
 After normalisation, I observed that:
 
