@@ -1,0 +1,9 @@
+---
+const { mp3Src, oggSrc } = Astro.props;
+---
+
+<audio controls="controls">
+  <source type="audio/mp3" src={mp3Src} />
+  <source type="audio/ogg" src={oggSrc} />
+  <p>Your browser does not support the audio element.</p>
+</audio>

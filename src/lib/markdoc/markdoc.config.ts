@@ -122,6 +122,13 @@ export const config: Config = {
     mermaid: {
       render: "Mermaid",
     },
+    audio: {
+      render: "Audio",
+      attributes: {
+        mp3Src: { type: String, required: true },
+        oggSrc: { type: String, required: true },
+      },
+    },
   },
   nodes: {
     heading: {

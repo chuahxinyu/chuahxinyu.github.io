@@ -3,7 +3,7 @@ external: false
 draft: false
 title: "[HackMelbourne] Web Development Workshop"
 description: "Learn to the basics of HTML, CSS and JavaScript (ReactJS) while building a To Do List app."
-date: 2023-09-04
+date: 2023-04-09
 ---
 
 > Slides: [Web Development Workshop Google Slides](https://docs.google.com/presentation/d/1SR-N2hrvNSth4RuIw_Q_f49rc3JapMdW7VecEDjME0Q/edit?usp=sharing)
