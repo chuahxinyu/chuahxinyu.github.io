@@ -17,7 +17,7 @@ date: 2023-08-29
 
 I tried recording using my phone's microphone, my laptop's built-in microphone and an external microphone from a pair of earphones plugged into my laptop to compare and contrast the qualities of the recordings.
 
-In terms of software, I used my phone's built-in [voice recorder application]() on my phone and used [Waveform 12](https://www.tracktion.com/products/waveform-free) on my laptop.
+In terms of software, I used my phone's built-in voice recorder application ([Samsung Voice Recorder](https://play.google.com/store/apps/details?id=com.sec.android.app.voicenote&hl=en_AU&gl=US)) on my phone and used [Waveform 12](https://www.tracktion.com/products/waveform-free) on my laptop.
 
 ## Location and set-up of equipment
 
@@ -45,10 +45,12 @@ From the waveforms and the recordings, I observed that:
 
 ## Settings that you used to record
 
-On the Laptop, I used Waveform 12's default settings for recording as follows:
+On the Laptop, I used Waveform 12's default settings on the laptop and the 'Standard' mode on Samsung Voice Recorder.
 
-- Image of Waveform 12 recording settings
+- Image of Waveform 12 recording settings (used for both built-in and external microphone recordings)
   ![Recording Settings](/public/assets/musi20174/recording-settings.png)
+- Image of Samsung Voice Recorder settings
+  ![Phone Recording Settings](/public//assets//musi20174/samsung-voice-recorder.png)
 
 I added an Normalise Layer to each of the clips to bring the amplitude to a target level (the norm) by applying a constant amount of gain to the audio recording.
 
