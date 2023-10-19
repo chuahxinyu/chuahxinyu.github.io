@@ -1,18 +1,40 @@
 ---
 import HeaderLink from "../HeaderLink.astro";
+const PAGES = [
+  {
+    name: "Home",
+    href: "/",
+  },
+  {
+    name: "👩‍💻 Projects",
+    href: "/projects",
+  },
+  {
+    name: "👩‍🏫 COMP10001",
+    href: "/comp10001",
+  },
+  {
+    name: "📚 Notes",
+    href: "/notes",
+  },
+  {
+    name: "🎵 MUSI20174",
+    href: "/musi20174",
+  },
+];
 ---
 
 <Fragment>
   <nav class="hidden md:inline" style="z-index: 1000;">
     <section class="text-text-bold">
       <ul class="unset flex gap-4 [&>li]:p-0">
-        <li><HeaderLink href="/">👋 Home</HeaderLink></li>
-        <li><HeaderLink href="/projects">👩‍💻 Projects</HeaderLink></li>
-        <li>|</li>
-        <li>
-          <HeaderLink href="/comp10001">👩‍🏫 COMP10001</HeaderLink>
-        </li>
-        <li><HeaderLink href="/notes">📚 Notes</HeaderLink></li>
+        {
+          PAGES.map((h) => (
+            <li>
+              <HeaderLink href={h.href}>{h.name}</HeaderLink>
+            </li>
+          ))
+        }
       </ul>
     </section>
   </nav>
@@ -35,13 +57,13 @@ import HeaderLink from "../HeaderLink.astro";
           <span class="fa-sr-only">Close mobile menu</span>
         </button>
         <ul class="unset flex flex-col text-text-bold gap-4 [&>li]:p-0 px-6">
-          <li><HeaderLink href="/">👋 Home</HeaderLink></li>
-          <li><HeaderLink href="/projects">👩‍💻 Projects</HeaderLink></li>
-          <hr />
-          <li>
-            <HeaderLink href="/comp10001">👩‍🏫 COMP10001</HeaderLink>
-          </li>
-          <li><HeaderLink href="/notes">📚 Notes</HeaderLink></li>
+          {
+            PAGES.map((h) => (
+              <li>
+                <HeaderLink href={h.href}>{h.name}</HeaderLink>
+              </li>
+            ))
+          }
         </ul>
       </div>
     </section>
