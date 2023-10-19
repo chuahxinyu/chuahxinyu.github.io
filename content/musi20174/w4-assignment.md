@@ -2,8 +2,8 @@
 external: false
 draft: false
 title: "Practical Studio Assignment, Submission 1"
-description: "A detailed examination of microphone recordings, comparing laptop, external microphone, and phone recordings, and provides valuable insights into ambient noise, recording quality, and potential future improvements in a practical studio setting."
-date: 2023-08-29
+description: "Microphone Recording Analysis: Laptop, External Mic, and Phone"
+date: 2023-08-20
 ---
 
 ## Objective
