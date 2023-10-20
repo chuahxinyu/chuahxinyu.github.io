@@ -126,7 +126,8 @@ export const config: Config = {
       render: "Audio",
       attributes: {
         mp3Src: { type: String, required: true },
-        oggSrc: { type: String, required: true },
+        oggSrc: { type: String, required: false },
+        wavSrc: { type: String, required: false },
       },
     },
   },

@@ -69,26 +69,27 @@ date: 2023-10-19
 
 ## Week 8: Reverb and Acoustic Space
 
+- I struggled to find Waveform's equivalent features that were shown in the tutorial videos so I unfortunately didn't get to try out the reverb and acoustic space features this week and might add them in after Submission 2.
+
 - **Assessment Piece Progress - Lead**: I managed to transcribe the lead line from the Adventure Time theme song and tried to record it with my ukulele. I also tried to record it with my trumpet but I found that the ukulele sounded better. I also tried to record it with my phone's microphone and my laptop's built-in microphone and found that the phone's microphone sounded better.
   - {% audio mp3Src="/assets/musi20174/lead-without-octave.mp3" oggSrc="/assets/musi20174/lead-without-octave.ogg" /%}
   - I was not very satisfied with the sound of the lead line so I tried to add an octave to the recording and found that it sounded better.
-  - {% audio mp3Src="/assets/musi20174/lead-with-octave.mp3" oggSrc="/assets/musi20174/lead-with-octave.ogg" /%}
+    - {% audio mp3Src="/assets/musi20174/lead-with-octave.mp3" oggSrc="/assets/musi20174/lead-with-octave.ogg" /%}
+  - And this is with the ukulele layered in:
+    - {% audio mp3Src="/assets/musi20174/lead-with-octave-and-ukulele.mp3" oggSrc="/assets/musi20174/lead-with-octave-and-ukulele.ogg" /%}
+  - Since the melody is going to be repeated again and again in the piece, I think I will give variation to each repetition by adding layers to the climax of the piece.
 
 ## Week 9: EQ and Dynamic Range Compression
 
-- **Assessment Piece Progress**:
-- **Practical Studio Assignment, Submission 2** I submitted the following:
-  - {% audio mp3Src="/assets/musi20174/psa2.mp3" oggSrc="/assets/musi20174/psa2.ogg" /%}
-- **Practical Studio Assignment, Submission 2 Reflection**
+- **Assessment Piece Progress: Practical Studio Assignment, Submission 2**: I finally started to put everything together into a single project and have been experimenting with different combinations of instruments and effects. I re-recorded the chords with my ukulele and decided to record the chords individually and then layering them in Waveform rather than recording all the chords in one go to preserve the original reverb of the chords and not have odd-sounding transitions between each one. I also added some vinyl crackle at the start, as well as some ambient sound to give it a more nostalgic feeling.
+  - {% audio mp3Src="/assets/musi20174/psa2.mp3" wavSrc="/assets/musi20174/psa2.wav" /%}
+  - ![Alt text](/assets/musi20174/psa2.png)
+- **Reflection Summary**: I found it particularly difficult to find or create good sounding instruments that would blend well together and will continue to experiment further. I am also not satisfied with the rhythm and timing of the instruments and will experiment with time warping and possibly changing the rhythms to improve the flow of the piece. The piece is also currently a bit bland and boring and I will try to add more layers and variation to make it more interesting.
 
 ## Week 10: Arranging your Mix
 
-- **Assessment Piece Progress**: I worked on coming up with a trumpet line 
-  <!-- - {% audio mp3Src="/assets/musi20174/arrangement-try1.mp3" oggSrc="/assets/musi20174/arrangement-try1.ogg" /%} -->
-
-## Week 11: Mixing and Mastering
-
-- **Assessment Piece Progress**: Admittedly, not a lot of work has been done on Waveform this week as I was busy working on other subject's assignments. However, I did add a few more inspirational songs to my [inspiration playlist](https://www.youtube.com/playlist?list=PLcZLVFyemx_bQ8pQ3VP2tdEXcXcEvy_Tg) and have been listening to it to get ideas for my piece. I've also been running some Adventure Time episodes in the background while I've been working to try to listen out for possible samples to use in my piece.
+- **Assessment Piece Progress**: I worked on coming up with something to play on the trumpet and have just been experimenting with different counter-melodies and rhythms. I also cleaned up the rhythm and timing of the mix a bit and tried experimenting with other instrument sounds.
+  - <!-- {% audio mp3Src="/assets/musi20174/w10-progress.mp3" wavSrc="/assets/musi20174/w10-progress.wav" /%} -->
 
 ## Week 12: The Final Touches
 
@@ -104,4 +105,4 @@ date: 2023-10-19
 
 ## Executive Summary
 
-I am unfortunately a few weeks behind on my logbook and admittedly haven't made much progress since submitting Practical Studio Assignment, Submission 2. However,
+Over the semester, I learnt various skills and aspects of music production in the lectures and tutorials and applied them to my final assessment piece. Through the lectures, it was very interesting to learn about the history of different musical elements that evolved into the music that we listen to today. With this being the first time I've ever delved into the world of music production, using a DAW, especially one that wasn't used in the tutorial videos proved a little difficult. However, over time, I have built more confidence in using Waveform, from making simple recordings to time warping, pitch bending and using plugins and effects. Watching my final assessment piece grow over time has proved to be both enjoyable and rewarding and I will continue to work on the feedback that I received to improve the piece further.
