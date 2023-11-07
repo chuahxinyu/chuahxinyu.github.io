@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { compareDesc, format, parseISO } from "date-fns";
-import { allPosts, Post } from "generated-content";
+import { allPosts, Post } from "contentlayer/generated";
 
 function PostCard(post: Post) {
   return (
@@ -16,10 +16,10 @@ function PostCard(post: Post) {
       <time dateTime={post.date} className="mb-2 block text-xs text-gray-600">
         {format(parseISO(post.date), "LLLL d, yyyy")}
       </time>
-      <div
+      {/* <div
         className="text-sm [&>*]:mb-3 [&>*:last-child]:mb-0"
         dangerouslySetInnerHTML={{ __html: post.body.html }}
-      />
+      /> */}
     </div>
   );
 }

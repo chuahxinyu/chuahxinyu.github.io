@@ -23,7 +23,7 @@
       }
     ],
     "paths": {
-      "generated-content": [
+      "contentlayer/generated": [
         "./.contentlayer/generated" // Added for Contentlayer
       ],
       "@/*": [
@@ -37,6 +37,8 @@
     "**/*.tsx",
     ".next/types/**/*.ts",
     ".contentlayer/generated" // Added for Contentlayer
+    ,
+    "contentlayer.config.ts"
   ],
   "exclude": [
     "node_modules"
