@@ -14,17 +14,21 @@ import tailwind from "@astrojs/tailwind";
 */
 import react from "@astrojs/react";
 const SERVER_PORT = 3000;
-const SITE_URL = `https://chuahxinyu.github.io`
+const SITE_URL = `https://chuahxinyu.github.io`;
 
 // https://astro.build/config
 export default defineConfig({
   site: SITE_URL,
   server: {
-    port: SERVER_PORT
+    port: SERVER_PORT,
   },
-  integrations: [sitemap(), tailwind({
-    config: {
-      applyBaseStyles: false
-    }
-  }), react()]
+  integrations: [
+    sitemap(),
+    tailwind({
+      config: {
+        applyBaseStyles: false,
+      },
+    }),
+    react(),
+  ],
 });

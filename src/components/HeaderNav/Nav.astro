@@ -11,7 +11,7 @@ const PAGES = [
   },
   {
     name: "👩‍🏫 COMP10001",
-    href: "/comp10001",
+    href: "https://cindyc-dev.github.io/notezzz/year1/comp10001/w03/",
   },
   {
     name: "📚 Notes",
@@ -27,7 +27,12 @@ const PAGES = [
         {
           PAGES.map((h) => (
             <li>
-              <HeaderLink href={h.href}>{h.name}</HeaderLink>
+              <HeaderLink
+                href={h.href}
+                target={h.href.startsWith("/") ? "_parent" : "_blank"}
+              >
+                {h.name}
+              </HeaderLink>
             </li>
           ))
         }
@@ -56,7 +61,12 @@ const PAGES = [
           {
             PAGES.map((h) => (
               <li>
-                <HeaderLink href={h.href}>{h.name}</HeaderLink>
+                <HeaderLink
+                  href={h.href}
+                  target={h.href.startsWith("/") ? "_parent" : "_blank"}
+                >
+                  {h.name}
+                </HeaderLink>
               </li>
             ))
           }
