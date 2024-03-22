@@ -14,7 +14,7 @@ import tailwind from "@astrojs/tailwind";
 */
 import react from "@astrojs/react";
 const SERVER_PORT = 3000;
-const SITE_URL = `https://chuahxinyu.github.io`;
+const SITE_URL = `https://cindyc-dev.github.io`;
 
 // https://astro.build/config
 export default defineConfig({

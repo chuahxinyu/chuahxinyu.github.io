@@ -5,8 +5,8 @@ export const SITE_TITLE = "Xin Yu";
 export const SITE_DESCRIPTION = "Xin Yu's little corner of the internet.";
 // export const TWITTER_HANDLE = "@yourtwitterhandle";
 export const MY_NAME = "Xin Yu";
-export const GITHUB_USERNAME = "chuahxinyu";
-export const LINKEDIN_USERNAME = "chuahxinyu";
+export const GITHUB_USERNAME = "cindyc-dev";
+export const LINKEDIN_USERNAME = "cindyc-dev";
 
 // setup in astro.config.mjs
 const BASE_URL = new URL(import.meta.env.SITE);

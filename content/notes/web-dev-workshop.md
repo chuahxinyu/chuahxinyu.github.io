@@ -103,21 +103,21 @@ It is worth noting that Code Sandbox also offers other deployment options that a
 
 ## 2 Ingredients for the Web
 
-{% codepen url="https://codepen.io/chuahxinyu/pen/KKZbgqa" title="CodePen Home HTML, CSS, JavaScript, React Bulb Example by Xin Yu" /%}
+{% codepen url="https://codepen.io/cindyc-dev/pen/KKZbgqa" title="CodePen Home HTML, CSS, JavaScript, React Bulb Example by Xin Yu" /%}
 
 ### 2.1 HTML
 
 > https://www.w3schools.com/html/default.asp
 
-{% codepen url="https://codepen.io/chuahxinyu/pen/gOBbyZg" title="HTML Basics by Xin Yu" /%}
+{% codepen url="https://codepen.io/cindyc-dev/pen/gOBbyZg" title="HTML Basics by Xin Yu" /%}
 
 ### 2.2 CSS
 
 > https://www.w3schools.com/css/
 
-{% codepen url="https://codepen.io/chuahxinyu/pen/PoyqqJE" title="CSS Basics (Starter) by Xin Yu" /%}
+{% codepen url="https://codepen.io/cindyc-dev/pen/PoyqqJE" title="CSS Basics (Starter) by Xin Yu" /%}
 
-{% codepen url="https://codepen.io/chuahxinyu/pen/WNabWWM" title="CSS Basics (Answer) by Xin Yu" /%}
+{% codepen url="https://codepen.io/cindyc-dev/pen/WNabWWM" title="CSS Basics (Answer) by Xin Yu" /%}
 
 ### 2.3 JavaScript
 
