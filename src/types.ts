@@ -1,3 +1,20 @@
+export interface NavItem {
+  title: string;
+  href: string;
+}
+
+export interface SocialLink {
+  icon: React.ReactNode;
+  alt: string;
+  href: string;
+}
+
+export interface Tag {
+  name: SkillsTagName | TypeTagName;
+  bgColor: string;
+  fgColor: string;
+}
+
 export interface Project {
   title: string;
   description: string;
@@ -10,11 +27,9 @@ export interface Project {
   tags: Tag[];
 }
 
-export enum SkillsTag {
-  
-}
+export enum SkillsTagName {}
 
-export enum TypeTag {
+export enum TypeTagName {
   CurrentObsession = "Current Obsession",
   Archived = "Archived",
   Award = "Award",

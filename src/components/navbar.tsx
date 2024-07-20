@@ -4,11 +4,7 @@ import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Button } from "@/components/ui/button";
 import Logo from "@/components/logo";
 import { FaGithub } from "react-icons/fa";
-
-interface NavItem {
-  title: string;
-  href: string;
-}
+import { NavItem, SocialLink } from "@/types";
 
 const NAV_ITEMS: NavItem[] = [
   {
@@ -17,14 +13,10 @@ const NAV_ITEMS: NavItem[] = [
   },
 ];
 
-interface SocialLink {
-  icon: React.ReactNode;
-  alt: string;
-  href: string;
-}
 const getIconStyles = () => {
   return "h-6 w-6"
 }
+
 const SOCIAL_LINKS: SocialLink[] = [
   {
     icon: <FaGithub className={getIconStyles()} />,
