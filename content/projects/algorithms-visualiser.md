@@ -5,4 +5,8 @@ date: 2022-05-29
 github: algorithms-visualiser
 tags: ["reactjs", "figma"]
 otherTags: ["hackathon"]
+images:
+  [
+    "https://github.com/cindyc-dev/algorithms-visualiser/raw/master/images/Insertion%20Sort.gif",
+  ]
 ---

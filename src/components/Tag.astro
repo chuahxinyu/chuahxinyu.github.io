@@ -1,7 +1,13 @@
 ---
 const { content, color = "blue" } = Astro.props;
 
-var classes = `text-xs font-light inline-flex items-center leading-sm uppercase px-3 py-[0.5] border rounded-full border-${color}-300 text-${color}-400`;
+var classes =
+  "text-xs font-light inline-flex items-center leading-sm uppercase px-3 py-[0.5] border rounded-full border-blue-300 text-blue-400";
+
+if (color === "gray") {
+  classes =
+    "text-xs font-light inline-flex items-center leading-sm uppercase px-3 py-[0.5] border rounded-full border-gray-300 text-gray-400";
+}
 ---
 
 <div class={classes}>

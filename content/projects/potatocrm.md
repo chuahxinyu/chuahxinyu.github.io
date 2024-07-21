@@ -19,4 +19,11 @@ tags:
     "tanstack-table",
   ]
 otherTags: ["team", "project-management"]
+images:
+  [
+    "https://github.com/cindyc-dev/comp30022/raw/main/readme-images/account_creation.gif",
+    "https://github.com/cindyc-dev/comp30022/raw/main/readme-images/connections.png",
+    "https://github.com/cindyc-dev/comp30022/raw/main/readme-images/viewing_connection.gif",
+    "https://github.com/cindyc-dev/comp30022/raw/main/readme-images/chatGif.gif",
+  ]
 ---

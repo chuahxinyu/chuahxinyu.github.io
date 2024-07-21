@@ -6,4 +6,10 @@ github: "trashwith.us"
 url: https://devpost.com/software/trashwith-us
 tags: ["reactjs", "javascript"]
 otherTags: ["hackathon", "team"]
+images:
+  [
+    "https://d112y698adiu2z.cloudfront.net/photos/production/software_photos/001/658/549/datas/gallery.jpg",
+    "https://d112y698adiu2z.cloudfront.net/photos/production/software_photos/001/658/547/datas/gallery.jpg",
+    "https://d112y698adiu2z.cloudfront.net/photos/production/software_photos/001/658/548/datas/gallery.jpg",
+  ]
 ---

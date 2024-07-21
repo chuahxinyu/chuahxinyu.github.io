@@ -4,4 +4,10 @@ description: Pitched a game concept through a point‑and‑click interactive we
 date: 2021-09-27
 github: firstaidgameconcept
 tags: ["reactjs", "javascript"]
+images:
+  [
+    "https://github.com/cindyc-dev/firstaidgameconcept/raw/main/images/2021-09-04-12-49-37.png",
+    "https://github.com/cindyc-dev/firstaidgameconcept/raw/main/images/2021-09-04-12-50-20.png",
+    "https://github.com/cindyc-dev/firstaidgameconcept/raw/main/images/2021-09-04-12-50-48.png",
+  ]
 ---

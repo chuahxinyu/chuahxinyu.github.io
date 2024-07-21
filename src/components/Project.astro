@@ -13,7 +13,7 @@ const formattedDate = new Date(project.frontmatter.date).toLocaleDateString(
   }
 );
 
-const { url, github, tags, title, description, date, otherTags } =
+const { url, github, tags, title, description, date, otherTags, images } =
   project.frontmatter;
 ---
 
@@ -22,7 +22,7 @@ const { url, github, tags, title, description, date, otherTags } =
     class="grid grid-cols-[1fr] md:grid-cols-[1fr_auto] md:gap-2 items-start"
   >
     <div class="title">
-      <span>{title}</span>{
+      <span class="font-bold text-lg">{title}</span>{
         url && (
           <a
             href={url}
@@ -56,6 +56,19 @@ const { url, github, tags, title, description, date, otherTags } =
       </time>
     </div>
   </div>
+  {
+    images && (
+      <div class="flex w-full overflow-x-scroll ml-2">
+        {images.map((image: string) => (
+          <img
+            src={image}
+            class="h-[15vh]"
+            alt="image of project, go to github link or project link to view the project and get better image descriptions"
+          />
+        ))}
+      </div>
+    )
+  }
   <div class="text-text-muted text-xs pt-0 pl-3">
     {description}
   </div>

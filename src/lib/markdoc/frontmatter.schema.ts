@@ -46,6 +46,6 @@ export const project = baseSchema.extend({
   tags: z.optional(z.array(z.string())),
   github: z.optional(z.string()),
   featured: z.optional(z.boolean()),
-  image: z.optional(z.string()),
+  images: z.optional(z.array(z.string())),
   otherTags: z.optional(z.array(z.string())),
 });

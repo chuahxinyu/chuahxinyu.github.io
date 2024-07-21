@@ -6,4 +6,9 @@ url: https://cindyc.me/cissa-summerhack-2023/
 github: cissa-summerhack-2023
 tags: ["reactjs"]
 otherTags: ["hackathon", "team"]
+images:
+  [
+    "https://d112y698adiu2z.cloudfront.net/photos/production/software_photos/002/379/146/datas/original.gif",
+    "https://d112y698adiu2z.cloudfront.net/photos/production/software_photos/002/379/797/datas/original.gif",
+  ]
 ---
