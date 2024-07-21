@@ -1,9 +1,9 @@
 ---
-const { content } = Astro.props
+const { content, color = "blue" } = Astro.props;
+
+var classes = `text-xs font-light inline-flex items-center leading-sm uppercase px-3 py-[0.5] border rounded-full border-${color}-300 text-${color}-400`;
 ---
 
-<div
-  class="text-xs inline-flex items-center font-bold leading-sm uppercase px-3 py-1 bg-blue-200 text-blue-700 rounded-full"
->
-{content}
+<div class={classes}>
+  {content}
 </div>

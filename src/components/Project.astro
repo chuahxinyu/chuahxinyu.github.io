@@ -1,5 +1,6 @@
 ---
 import { GITHUB_USERNAME } from "src/config";
+import Tag from "./Tag.astro";
 
 const { project } = Astro.props;
 
@@ -12,14 +13,8 @@ const formattedDate = new Date(project.frontmatter.date).toLocaleDateString(
   }
 );
 
-
-let link = ''
-if (project.frontmatter.url) {
-  link = project.frontmatter.url
-} else if (project.frontmatter.github) {
-  link = `https://github.com/${GITHUB_USERNAME}/${project.frontmatter.github}`
-}
-
+const { url, github, tags, title, description, date, otherTags } =
+  project.frontmatter;
 ---
 
 <div class="py-3">
@@ -27,25 +22,45 @@ if (project.frontmatter.url) {
     class="grid grid-cols-[1fr] md:grid-cols-[1fr_auto] md:gap-2 items-start"
   >
     <div class="title">
-      {link ? <a
-        href={link}
-        target="_blank"
-        class="unset transition-[background-size] duration-300 bg-gradient-to-r bg-left-bottom bg-no-repeat bg-[length:0%_55%] hover:bg-[length:100%_55%] dark:bg-[length:0%_2px] hover:dark:bg-[length:100%_2px] from-primary-blue to-primary-blue dark:from-primary-blue dark:to-primary-blue"
-      >
-        <span>{project.frontmatter.title}</span>
-        <span>
-          <i class="ml-1 mr-1 text-[12px] pb-2 fa-solid fa-up-right-from-square"
-          ></i>
-        </span>
-      </a> : <span>{project.frontmatter.title}</span>}
+      <span>{title}</span>{
+        url && (
+          <a
+            href={url}
+            target="_blank"
+            class="ml-2 unset transition-[background-size] duration-300 bg-gradient-to-r bg-left-bottom bg-no-repeat bg-[length:0%_55%] hover:bg-[length:100%_55%] dark:bg-[length:0%_2px] hover:dark:bg-[length:100%_2px] from-primary-blue to-primary-blue dark:from-primary-blue dark:to-primary-blue"
+          >
+            <i class="ml-1 mr-1 text-[12px] pb-2 fa-solid fa-up-right-from-square" />
+          </a>
+        )
+      }
+      {
+        github && (
+          <a
+            class="unset rounded-sm transition-[background-size] duration-150 ease-in-out bg-left-bottom bg-[length:0%_55%] hover:bg-[length:100%_55%] bg-no-repeat bg-gradient-to-r from-primary-blue to-primary-blue dark:bg-none dark:hover:text-primary-blue"
+            href={`https://github.com/${GITHUB_USERNAME}/${github}`}
+            target="_blank"
+            aria-label="Cindy on GitHub"
+          >
+            <i
+              class="fa-brands fa-github px-2"
+              aria-hidden="true"
+              title="GitHub"
+            />
+          </a>
+        )
+      }
     </div>
     <div class="text-text-muted text-sm italic pt-1">
-      <time datetime={project.frontmatter.date.toISOString()}>
+      <time datetime={date.toISOString()}>
         {formattedDate}
       </time>
     </div>
   </div>
   <div class="text-text-muted text-xs pt-0 pl-3">
-    {project.frontmatter.description}
+    {description}
+  </div>
+  <div class="flex gap-2 mt-2 ml-2 w-full flex-wrap">
+    {tags?.map((tag: string) => <Tag content={tag} />)}
+    {otherTags?.map((tag: string) => <Tag content={tag} color="gray" />)}
   </div>
 </div>

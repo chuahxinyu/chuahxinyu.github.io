@@ -7,7 +7,7 @@ const baseSchema = z.object({
     required_error: "Required frontmatter missing: title",
     invalid_type_error: "title must be a string",
   }),
-  date:z.date({
+  date: z.date({
     invalid_type_error:
       "date must be written in yyyy-mm-dd format without quotes: For example, Jan 22, 2000 should be written as 2000-01-22.",
   }),
@@ -44,5 +44,8 @@ export const blog = z.discriminatedUnion("external", [
 export const project = baseSchema.extend({
   url: z.optional(z.string()),
   tags: z.optional(z.array(z.string())),
-  github: z.optional(z.string())
+  github: z.optional(z.string()),
+  featured: z.optional(z.boolean()),
+  image: z.optional(z.string()),
+  otherTags: z.optional(z.array(z.string())),
 });

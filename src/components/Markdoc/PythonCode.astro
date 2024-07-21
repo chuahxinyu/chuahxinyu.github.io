@@ -37,7 +37,6 @@ const { isRunnable } = Astro.props;
     clearCurrent: boolean = false,
     view2: EditorView
   ) => {
-    console.log(view2);
     let transaction = view2.state.update({
       changes: { from: 0, to: view2.state.doc.length, insert: `${newText}` },
     });
@@ -64,8 +63,6 @@ const { isRunnable } = Astro.props;
   ) as NodeListOf<Element>;
   codeArray.forEach((codeBlock, i) => {
     const code = (codeBlock.textContent as string).trim();
-    console.log({ codeBlock: codeBlock });
-    console.log({ code0: code });
     const editor = editorArray[i];
     editor.id = `editor${i}`;
     const output = outputArray[i];
@@ -96,7 +93,6 @@ const { isRunnable } = Astro.props;
         EditorView.updateListener.of((update) => {
           // Compare localstorageVal to changed value - if different, save to local storage
           if (update.transactions.some((tr) => tr.docChanged)) {
-            console.log("change");
             localStorage.setItem(localStorageRef, update.state.doc.toString());
           }
         }),
@@ -131,7 +127,6 @@ const { isRunnable } = Astro.props;
           updateOutput(output, false, view2);
         },
         error: (error) => {
-          console.log({ error: error });
           updateOutput(
             "\n=== ERROR ===\n" + (error as PythonError)["error"],
             false,
@@ -148,7 +143,6 @@ const { isRunnable } = Astro.props;
     const resetButton = resetButtonArray[i];
     resetButton.id = `resetcode${i}`;
     resetButton.addEventListener("click", () => {
-      console.log("Reset Code");
       if (view.state.doc.toString() != code) {
         if (
           !confirm(
@@ -163,7 +157,6 @@ const { isRunnable } = Astro.props;
         changes: { from: 0, to: view.state.doc.length, insert: code },
       });
       view.dispatch(transaction);
-      console.log({ code: code });
       updateOutput(
         `${i}: Click on the Run Code button to run the code.`,
         true,
