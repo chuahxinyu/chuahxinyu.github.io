@@ -2,7 +2,7 @@
 external: false
 draft: false
 title: "JavaScript Maps/Dictionaries 🗺️"
-description: "Written in Sem 1 2023"
+description: "The 3 ways to create maps (aka dictionaries) in JS - their pros, cons, use cases and performance"
 date: 2024-07-23
 ---
 

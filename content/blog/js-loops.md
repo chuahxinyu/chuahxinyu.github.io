@@ -2,7 +2,7 @@
 external: false
 draft: false
 title: "JavaScript Loops 🔄"
-description: "The 7 ways to create loops in JS - their pros, cons, use cases and performance "
+description: "The 7 ways to create loops in JS - their pros, cons, use cases and performance"
 date: 2024-07-22
 ---
 
