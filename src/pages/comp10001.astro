@@ -14,14 +14,17 @@ const sortedPosts = posts
   .filter((p) => p.frontmatter.draft !== true)
   .sort(
     (a, b) =>
-      new Date(b.frontmatter.date).valueOf() -
-      new Date(a.frontmatter.date).valueOf()
+      new Date(a.frontmatter.date).valueOf() -
+      new Date(b.frontmatter.date).valueOf()
   );
 ---
 
 <PageLayout>
   <PageMeta title={`👩‍🏫 COMP10001 | ${SITE_TITLE}`} slot="meta" />
   <section slot="main">
+    <p class="text-text-muted">
+      I used to tutor COMP10001 for the uni and here are the tutorial notes
+    </p>
     <ul>
       {
         sortedPosts.map((post) => {
