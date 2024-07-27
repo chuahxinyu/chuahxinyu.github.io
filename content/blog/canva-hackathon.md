@@ -6,6 +6,55 @@ description: "It's been a while since my last hackathon (2 months lol) so let's 
 date: 2024-07-25
 ---
 
+## Day 3
+
+- Reading and learning more about the CanvasAPI and its capabilities
+
+  - [Web APIs > Canvas API | mdn web docs](https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API) - fallback content (for accessibility) should be provided within the <canvas> element
+
+    ```html
+    <canvas>
+      <!-- Fallback -->
+
+      Which can be text, an image, etc.
+      <img src="..." alt="..." />
+    </canvas>
+    ```
+
+    - Rendering Contexts - there are two kinds, i think: 2d and 3d -`const ctx = canvas.getContext("2d")`
+
+    - `<canvas>` only supports drawing rectangles and paths
+    - the [Bezier and quadratic curves](https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API/Tutorial/Drawing_shapes#bezier_and_quadratic_curves) look pretty interesting and they even have an example with a speech bubble!
+
+    {% toast type="col-detail" summary="How to draw a path in HTMLCanvas" %}
+
+    ```js
+    function draw() {
+      const canvas = document.getElementById("canvas");
+      if (canvas.getContext) {
+        const ctx = canvas.getContext("2d");
+
+        ctx.beginPath(); // 1. Create a path
+        ctx.moveTo(75, 50); // 2. Use drawing commands - moveTo: starting point for path
+        ctx.lineTo(100, 75); //    lineTo: drawing lines from the point before to the argument point
+        ctx.lineTo(100, 25);
+        ctx.fill(); // 3. You can stroke and/or fill the path to render it
+      }
+    }
+    ```
+
+    - after calling `beginPath()` the first command is always treated as a `moveTo()`, regardless of what it actually is
+    - any open shapes are **closed automatically** when calling `fill()`
+      - BUT NOT `stroke()` - so you still have to call `closePath()` for `stroke()`
+
+    {% /toast %}
+
+- Decision Point: I think I'll be going down the route of using Path2D Objects rather than the native CanvasAPI drawing commands as it is interchangeable with SVG paths which could be used to create [ShapeElements](https://www.canva.dev/docs/apps/creating-shapes/) instead of [AppElements](https://www.canva.dev/docs/apps/creating-app-elements/)
+- I also explored PaperJS, a library for Vector graphic scripting - [their examples](http://paperjs.org/examples/nyan-rainbow/) look suuuper cool
+  - [this example](http://paperjs.org/examples/satie-liked-to-draw/) gives me an idea for another Canva App that generates graphics based off of audio :3
+  - [Weird Faces by Matthias Dörfelt](https://www.mokafolio.de/works/Weird-Faces) is of procedurally generated faces made with PaperJS and low key haunt me but also, it's like so relevant to how AI is generated images and faces these days - but this was work was made in 2012/13 :O
+    - ![Weird Faces by Matthias Dörfelt](https://www.mokafolio.de/thumbs/works/Weird-Faces/02-1200x763.jpg)
+
 ## Day 2
 
 - Decently significant has been made!
