@@ -2,9 +2,64 @@
 external: false
 draft: false
 title: "Canva Hackathon Devlog 👩‍💻"
-description: "It's been a while since my last hackathon (2 months lol) so let's join another one and document the journey 👣"
+description: "I didn't end up completing the hackathon project due to personal reasons but I did learn a lot about the Canva AppSDK and AppUIKit"
 date: 2024-07-25
 ---
+
+- I didn't end up completing the hackathon project due to personal reasons but I did learn a lot about the Canva AppSDK and AppUIKit
+
+## Day 4
+- [Paper.js > Creating Predefined Shapes](http://paperjs.org/tutorials/paths/creating-predefined-shapes/)
+  - look, it has a rectangular shaped path with rounded corners!
+
+## Day 3
+
+- Reading and learning more about the CanvasAPI and its capabilities
+
+  - [Web APIs > Canvas API | mdn web docs](https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API) - fallback content (for accessibility) should be provided within the <canvas> element
+
+    ```html
+    <canvas>
+      <!-- Fallback -->
+
+      Which can be text, an image, etc.
+      <img src="..." alt="..." />
+    </canvas>
+    ```
+
+    - Rendering Contexts - there are two kinds, i think: 2d and 3d -`const ctx = canvas.getContext("2d")`
+
+    - `<canvas>` only supports drawing rectangles and paths
+    - the [Bezier and quadratic curves](https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API/Tutorial/Drawing_shapes#bezier_and_quadratic_curves) look pretty interesting and they even have an example with a speech bubble!
+
+    {% toast type="col-detail" summary="How to draw a path in HTMLCanvas" %}
+
+    ```js
+    function draw() {
+      const canvas = document.getElementById("canvas");
+      if (canvas.getContext) {
+        const ctx = canvas.getContext("2d");
+
+        ctx.beginPath(); // 1. Create a path
+        ctx.moveTo(75, 50); // 2. Use drawing commands - moveTo: starting point for path
+        ctx.lineTo(100, 75); //    lineTo: drawing lines from the point before to the argument point
+        ctx.lineTo(100, 25);
+        ctx.fill(); // 3. You can stroke and/or fill the path to render it
+      }
+    }
+    ```
+
+    - after calling `beginPath()` the first command is always treated as a `moveTo()`, regardless of what it actually is
+    - any open shapes are **closed automatically** when calling `fill()`
+      - BUT NOT `stroke()` - so you still have to call `closePath()` for `stroke()`
+
+    {% /toast %}
+
+- Decision Point: I think I'll be going down the route of using Path2D Objects rather than the native CanvasAPI drawing commands as it is interchangeable with SVG paths which could be used to create [ShapeElements](https://www.canva.dev/docs/apps/creating-shapes/) instead of [AppElements](https://www.canva.dev/docs/apps/creating-app-elements/)
+- I also explored PaperJS, a library for Vector graphic scripting - [their examples](http://paperjs.org/examples/nyan-rainbow/) look suuuper cool
+  - [this example](http://paperjs.org/examples/satie-liked-to-draw/) gives me an idea for another Canva App that generates graphics based off of audio :3
+  - [Weird Faces by Matthias Dörfelt](https://www.mokafolio.de/works/Weird-Faces) is of procedurally generated faces made with PaperJS and low key haunt me but also, it's like so relevant to how AI is generated images and faces these days - but this was work was made in 2012/13 :O
+    - ![Weird Faces by Matthias Dörfelt](https://www.mokafolio.de/thumbs/works/Weird-Faces/02-1200x763.jpg)
 
 ## Day 2
 
@@ -22,7 +77,7 @@ date: 2024-07-25
 - How it's going
   - ![](/assets/other/speechy-progress-1.gif)
 - The developer experience using the AppSDK and AppUIKit has been really nice thusfar 😍
-  - I really like that the UIKit is in a storybook with every single example clearly listed out and the grouping and use is so intuitive and easy-to-use 💗
+  - I really like that the UIKit is in a [storybook](https://storybook.js.org/docs) with every single example clearly listed out and the grouping and use is so intuitive and easy-to-use
 - I'm not sure if I should be using an [AppElement](https://www.canva.dev/docs/apps/creating-app-elements/) or [ShapeElement](https://www.canva.dev/docs/apps/creating-shapes/) for the speech bubble. I've been using the AppElement so far and noticed the following:
   - it uses [HTMLCanvas](https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API)
     - it's my first time using the CanvasAPI 🖼️👓
@@ -48,8 +103,3 @@ date: 2024-07-25
   - [The AppUIKit Storybook](https://www.canva.dev/docs/apps/app-ui-kit)
   - [Starter Kit Repo](https://github.com/canva-sdks/canva-apps-sdk-starter-kit)
     - Initially thought that I didn't need this because I used the [`@canva/create-app` CLI](https://community.canva.dev/t/introducing-canva-create-app-cli/3129) to create my project, then I got confused because the docs were making imports from files that did not exist from the boilerplate, then I realised that the Starter Kit is not just the basic boilerplate code, like example code, util functions, hooks, etc.
-  -
-
----
-
-> Lol, I realise that this little DevLog low key looks like it's sponsored by Canva, but I would really like to work there if anyone wants to give me a referral 👀
