@@ -103,8 +103,3 @@ date: 2024-07-25
   - [The AppUIKit Storybook](https://www.canva.dev/docs/apps/app-ui-kit)
   - [Starter Kit Repo](https://github.com/canva-sdks/canva-apps-sdk-starter-kit)
     - Initially thought that I didn't need this because I used the [`@canva/create-app` CLI](https://community.canva.dev/t/introducing-canva-create-app-cli/3129) to create my project, then I got confused because the docs were making imports from files that did not exist from the boilerplate, then I realised that the Starter Kit is not just the basic boilerplate code, like example code, util functions, hooks, etc.
-  -
-
----
-
-> Lol, I realise that this little DevLog low key looks like it's sponsored by Canva, but I would really like to work there if anyone wants to give me a referral 👀
