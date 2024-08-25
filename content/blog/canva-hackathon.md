@@ -2,9 +2,15 @@
 external: false
 draft: false
 title: "Canva Hackathon Devlog 👩‍💻"
-description: "It's been a while since my last hackathon (2 months lol) so let's join another one and document the journey 👣"
+description: "I didn't end up completing the hackathon project due to personal reasons but I did learn a lot about the Canva AppSDK and AppUIKit"
 date: 2024-07-25
 ---
+
+- I didn't end up completing the hackathon project due to personal reasons but I did learn a lot about the Canva AppSDK and AppUIKit
+
+## Day 4
+- [Paper.js > Creating Predefined Shapes](http://paperjs.org/tutorials/paths/creating-predefined-shapes/)
+  - look, it has a rectangular shaped path with rounded corners!
 
 ## Day 3
 
@@ -71,7 +77,7 @@ date: 2024-07-25
 - How it's going
   - ![](/assets/other/speechy-progress-1.gif)
 - The developer experience using the AppSDK and AppUIKit has been really nice thusfar 😍
-  - I really like that the UIKit is in a storybook with every single example clearly listed out and the grouping and use is so intuitive and easy-to-use 💗
+  - I really like that the UIKit is in a [storybook](https://storybook.js.org/docs) with every single example clearly listed out and the grouping and use is so intuitive and easy-to-use
 - I'm not sure if I should be using an [AppElement](https://www.canva.dev/docs/apps/creating-app-elements/) or [ShapeElement](https://www.canva.dev/docs/apps/creating-shapes/) for the speech bubble. I've been using the AppElement so far and noticed the following:
   - it uses [HTMLCanvas](https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API)
     - it's my first time using the CanvasAPI 🖼️👓
